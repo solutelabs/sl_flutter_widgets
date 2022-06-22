@@ -10,6 +10,7 @@ class SlButton extends StatelessWidget {
     this.backgroundColor = SLColors.white,
     this.borderRadius = 6,
     this.height = 42,
+    this.width = double.infinity,
     this.padding,
     Key? key,
   }) : super(
@@ -37,6 +38,9 @@ class SlButton extends StatelessWidget {
   ///height of the button
   final double height;
 
+  ///height of the button
+  final double width;
+
   ///padding of the button
   final EdgeInsetsGeometry? padding;
 
@@ -47,7 +51,7 @@ class SlButton extends StatelessWidget {
               horizontal: 8.0,
             ),
         child: SizedBox(
-          width: double.infinity,
+          width: width,
           height: height,
           child: TextButton(
             onPressed: onTap,

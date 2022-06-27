@@ -46,8 +46,7 @@ class SlButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: padding ??
-            const EdgeInsets.zero,
+        padding: padding ?? EdgeInsets.zero,
         child: SizedBox(
           width: width,
           height: height,

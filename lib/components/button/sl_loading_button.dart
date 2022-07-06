@@ -65,7 +65,7 @@ class SlLoadingButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) => SlLoadingContainer(
         button: SlButton(
-          text: text,
+          text:isLoading ? '': text,
           onTap: onTap,
           backgroundColor: backgroundColor,
           borderColor: borderColor,

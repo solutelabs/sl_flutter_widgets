@@ -5,6 +5,7 @@ import 'package:sl_flutter_widgets/components/datepicker/i18n/date_picker_i18n.d
 import 'package:sl_flutter_widgets/components/loader/sl_loading_indicator.dart';
 import 'package:sl_flutter_widgets/components/progress_bar/sl_liner_progress_bar.dart';
 import 'package:sl_flutter_widgets/components/texts/sl_text_hyperlink.dart';
+import 'package:sl_flutter_widgets/components/toast/sl_toast.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +33,8 @@ class ListViewBuilder extends StatelessWidget {
     "linear Progress",
     "Text Hyper link",
     "loader",
-    "date picker"
+    "date picker",
+    "toast View"
   ];
 
   @override
@@ -114,7 +116,7 @@ class ListViewBuilder extends StatelessWidget {
                           initialDate: DateTime(1994),
                           firstDate: DateTime(1960),
                           lastDate: DateTime(2012),
-                          dateFormat: "MMM-yyyy",
+                          dateFormat: "MMMM-yyyy",
                           locale: DateTimePickerLocale.en_us,
                           backgroundColor: Colors.transparent,
                           confirmText: "Done",
@@ -127,6 +129,18 @@ class ListViewBuilder extends StatelessWidget {
                           height: 300);
                       print("Date Picked $datePicked");
 
+                      break;
+                    case (5):
+                      SLToast.show(
+                        SLToastContext().init(context),
+                        "This is test message",
+                        duration: 4,
+                        position: SLToast.top,
+                        backgroundColor: Colors.black,
+                        backgroundRadius: 5,
+                        textStyle:
+                            const TextStyle(fontSize: 15, color: Colors.white),
+                      );
                       break;
 
                     default:

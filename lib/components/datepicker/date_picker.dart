@@ -142,7 +142,7 @@ class DatePicker {
                   style: TextButton.styleFrom(primary: cancelTextColor),
                   child: Text(confirmText ?? "Done"),
                   onPressed: () {
-                    onConfirmPressed!();
+                    onConfirmPressed!(_selectedDate);
                     Navigator.pop(context, _selectedDate);
                   },
                 ),
@@ -165,6 +165,9 @@ class DatePicker {
                           ),
                     ),
                     onChange: ((DateTime date, list) {
+                      _selectedDate = date;
+                    }),
+                    onConfirm: ((DateTime date, list) {
                       _selectedDate = date;
                     }),
                     looping: looping,

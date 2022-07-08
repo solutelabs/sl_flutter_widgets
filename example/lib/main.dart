@@ -25,10 +25,6 @@ class MyApp extends StatelessWidget {
 // ignore: must_be_immutable
 class ListViewBuilder extends StatelessWidget {
   ListViewBuilder({Key? key}) : super(key: key);
-  DateTime? data;
-
-  /// TextField controller.
-
   List widgets = [
     "alert",
     "linear Progress",
@@ -108,30 +104,30 @@ class ListViewBuilder extends StatelessWidget {
 
                     case (4):
                       var datePicked = await DatePicker.showSimpleDatePicker(
-                          context,
-                          textColor: Colors.grey,
-                          itemTextStyle: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 15,
-                          ),
-                          initialDate: DateTime(1994),
-                          firstDate: DateTime(1960),
-                          lastDate: DateTime(2012),
-                          dateFormat: "MMMM-yyyy",
-                          locale: DateTimePickerLocale.en_us,
-                          backgroundColor: Colors.transparent,
-                          confirmText: "Done",
-                          cancelTextColor: Colors.black,
-                          looping: true,
-                          alignment: Alignment.centerLeft,
-                          pickerPadding:
-                              const EdgeInsets.only(left: 12, right: 12),
-                          width: 300,
-                          height: 300,
-                          onConfirmPressed: confirm);
-                      data = datePicked;
-                      print("Date Picked $datePicked");
-
+                        context,
+                        textColor: Colors.grey,
+                        itemTextStyle: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                        ),
+                        initialDate: DateTime(1994),
+                        firstDate: DateTime(1960),
+                        lastDate: DateTime(2012),
+                        dateFormat: "MMMM-yyyy",
+                        locale: DateTimePickerLocale.en_us,
+                        backgroundColor: Colors.transparent,
+                        confirmText: "Done",
+                        cancelTextColor: Colors.black,
+                        looping: true,
+                        alignment: Alignment.centerLeft,
+                        pickerPadding:
+                            const EdgeInsets.only(left: 12, right: 12),
+                        width: 300,
+                        height: 300,
+                        onConfirmPressed: (date) {
+                          // print("confirm date$date");
+                        },
+                      );
                       break;
                     case (5):
                       SLToast.show(
@@ -152,9 +148,5 @@ class ListViewBuilder extends StatelessWidget {
                 child: Text(widgets[index]));
           }),
     );
-  }
-
-  void confirm() {
-    print(data);
   }
 }

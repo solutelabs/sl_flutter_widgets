@@ -165,7 +165,6 @@ class DatePicker {
                           ),
                     ),
                     onChange: ((DateTime date, list) {
-                      print(date);
                       _selectedDate = date;
                     }),
                     looping: looping,

@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
 // ignore: must_be_immutable
 class ListViewBuilder extends StatelessWidget {
   ListViewBuilder({Key? key}) : super(key: key);
+  DateTime? data;
 
   /// TextField controller.
 
@@ -127,8 +128,8 @@ class ListViewBuilder extends StatelessWidget {
                               const EdgeInsets.only(left: 12, right: 12),
                           width: 300,
                           height: 300,
-                          onConfirmPressed: onConfirmPressed);
-
+                          onConfirmPressed: confirm);
+                      data = datePicked;
                       print("Date Picked $datePicked");
 
                       break;
@@ -153,7 +154,7 @@ class ListViewBuilder extends StatelessWidget {
     );
   }
 
-  void onConfirmPressed() {
-    print("confirm called");
+  void confirm() {
+    print(data);
   }
 }

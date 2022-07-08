@@ -126,7 +126,9 @@ class ListViewBuilder extends StatelessWidget {
                           pickerPadding:
                               const EdgeInsets.only(left: 12, right: 12),
                           width: 300,
-                          height: 300);
+                          height: 300,
+                          onConfirmPressed: onConfirmPressed);
+
                       print("Date Picked $datePicked");
 
                       break;
@@ -149,5 +151,9 @@ class ListViewBuilder extends StatelessWidget {
                 child: Text(widgets[index]));
           }),
     );
+  }
+
+  void onConfirmPressed() {
+    print("confirm called");
   }
 }

@@ -106,6 +106,7 @@ class DatePicker {
       double width: 300,
       double height: 300,
       EdgeInsets pickerPadding: EdgeInsets.zero,
+      required Function? onConfirmPressed,
       Alignment alignment: Alignment.center}) async {
     DateTime? _selectedDate = initialDate;
 
@@ -141,6 +142,7 @@ class DatePicker {
                   style: TextButton.styleFrom(primary: cancelTextColor),
                   child: Text(confirmText ?? "Done"),
                   onPressed: () {
+                    onConfirmPressed!();
                     Navigator.pop(context, _selectedDate);
                   },
                 ),

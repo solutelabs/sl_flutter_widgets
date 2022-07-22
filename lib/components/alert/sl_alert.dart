@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// A popup alert dialog widget that pops up at the centre of a page and overlays
+/// A popup alert dialog widget that pops up at the centre of page and overlays
 /// over its contents.
 class SLAlert extends StatefulWidget {
   /// Creates a popup alert dialog that takes place at the centre of the screen
@@ -69,7 +69,7 @@ class SLAlert extends StatefulWidget {
 
   /// Background color of parent container
   final Color? backgroundColor;
-
+///
   final bool? onlyPositiveButtonCenter;
 
   @override

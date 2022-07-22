@@ -8,7 +8,7 @@ void main() {
   group('hyper link text test', () {
     testWidgets('should show label', (WidgetTester tester) async {
       await tester.pumpWidget(
-        MaterialApp(
+        const MaterialApp(
             home: TextHyperlink(
           url: _url,
           label: _label,

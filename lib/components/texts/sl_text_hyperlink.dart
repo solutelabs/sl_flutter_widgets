@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sl_flutter_widgets/core/hyperlink_exception.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 /// A widget for clickable texts.
@@ -37,7 +38,7 @@ class TextHyperlink extends StatelessWidget {
           if (await canLaunchUrl(Uri.parse(url))) {
             await launchUrl(Uri.parse(url));
           } else {
-            throw 'Could not launch $url';
+            throw HyperlinkException(msg: 'Could not launch $url');
           }
         },
       );

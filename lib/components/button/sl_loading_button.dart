@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:sl_flutter_widgets/colors/sl_color.dart';
 import 'package:sl_flutter_widgets/components/button/sl_button.dart';
 import 'package:sl_flutter_widgets/components/button/sl_loading_container.dart';
-
+///it will provide button with loading indicator
 class SlLoadingButton extends StatelessWidget {
+  ///initilize the button
   const SlLoadingButton({
     required this.text,
     required this.onTap,
-    required this.isLoading,
+    required this.isLoading,    required this.loaderColor,
     this.loaderHeight = 24,
     this.loaderWidth = 24,
-    required this.loaderColor,
+
     this.textStyle,
     this.borderColor = SLColors.white,
     this.backgroundColor = SLColors.white,

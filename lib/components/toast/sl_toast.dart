@@ -1,37 +1,47 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
+///contest for the [SlToast] widget
 class SLToastContext {
+  ///  Constructor for SLToast
+  factory SLToastContext() => _instance;
+  SLToastContext._internal();
+
+  ///[BuildContext] of the view
   BuildContext? context;
 
   static final SLToastContext _instance = SLToastContext._internal();
-
-  ///  Constructor for SLToast
-  factory SLToastContext() {
-    return _instance;
-  }
 
   /// Take users Context
   SLToastContext init(BuildContext context) {
     _instance.context = context;
     return _instance;
   }
-
-  SLToastContext._internal();
 }
 
+/// [SlToast] widget for the app
 class SLToast {
+  ///length of the short
   static const int lengthShort = 1;
+
+  ///longest lenth
   static const int lengthLong = 3;
+  ///bottom const
   static const int bottom = 0;
+  ///center const
   static const int center = 1;
+
+  ///top const
   static const int top = 2;
+  ///this function will show toast
   static void show(
     SLToastContext context,
     String msg, {
     int? duration = 1,
     int? position = 0,
     Color backgroundColor = const Color(0xAA000000),
-    textStyle = const TextStyle(fontSize: 15, color: Colors.white),
+    TextStyle textStyle = const TextStyle(fontSize: 15, color: Colors.white),
     double backgroundRadius = 20,
     bool? rootNavigator,
     Border? border,
@@ -42,24 +52,26 @@ class SLToast {
 
     SLToastView.dismiss();
     SLToastView.createView(msg, SLToastContext().context!, duration, position,
-        backgroundColor, textStyle, backgroundRadius, border, rootNavigator);
+        backgroundColor, textStyle, backgroundRadius, border,
+        rootNavigator: rootNavigator);
   }
 }
 
+///initial
 class SLToastView {
-  static final SLToastView _singleton = SLToastView._internal();
-
-  factory SLToastView() {
-    return _singleton;
-  }
-
+  ///initilize the [SLToastView]
+  factory SLToastView() => _singleton;
   SLToastView._internal();
 
+  static final SLToastView _singleton = SLToastView._internal();
+
+  ///state of the overlay
   static OverlayState? overlayState;
   static OverlayEntry? _overlayEntry;
   static bool _isVisible = false;
 
-  static void createView(
+  ///create tpast view
+  static Future<void> createView(
       String msg,
       BuildContext context,
       int? duration,
@@ -68,7 +80,7 @@ class SLToastView {
       TextStyle textStyle,
       double backgroundRadius,
       Border? border,
-      bool? rootNavigator) async {
+      {bool? rootNavigator = false}) async {
     overlayState = Overlay.of(context, rootOverlay: rootNavigator ?? false);
 
     _overlayEntry = OverlayEntry(
@@ -93,11 +105,13 @@ class SLToastView {
     );
     _isVisible = true;
     overlayState!.insert(_overlayEntry!);
-    await Future.delayed(Duration(seconds: duration ?? SLToast.lengthShort));
-    dismiss();
+    await Future<Void>.delayed(
+        Duration(seconds: duration ?? SLToast.lengthShort));
+    await dismiss();
   }
 
-  static dismiss() async {
+  ///it will dismiss the toast
+  static Future<void> dismiss() async {
     if (!_isVisible) {
       return;
     }
@@ -106,27 +120,30 @@ class SLToastView {
   }
 }
 
+///toast widget for the flutter
 class ToastWidget extends StatelessWidget {
+  ///initilize the toast widget
   const ToastWidget({
-    Key? key,
     required this.widget,
     required this.gravity,
+    Key? key,
   }) : super(key: key);
 
+  ///widget for the toast
   final Widget widget;
+
+  ///gravity of the toast
   final int? gravity;
 
   @override
-  Widget build(BuildContext context) {
-    return Positioned(
-        top: gravity == 2 ? MediaQuery.of(context).viewInsets.top + 50 : null,
-        bottom:
-            gravity == 0 ? MediaQuery.of(context).viewInsets.bottom + 50 : null,
-        child: IgnorePointer(
-          child: Material(
-            color: Colors.transparent,
-            child: widget,
-          ),
-        ));
-  }
+  Widget build(BuildContext context) => Positioned(
+      top: gravity == 2 ? MediaQuery.of(context).viewInsets.top + 50 : null,
+      bottom:
+          gravity == 0 ? MediaQuery.of(context).viewInsets.bottom + 50 : null,
+      child: IgnorePointer(
+        child: Material(
+          color: Colors.transparent,
+          child: widget,
+        ),
+      ));
 }

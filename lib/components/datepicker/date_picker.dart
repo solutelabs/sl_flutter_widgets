@@ -5,6 +5,7 @@ import 'date_picker_constants.dart';
 import 'i18n/date_picker_i18n.dart';
 import 'widget/date_picker_widget.dart';
 
+///mode of the date time picker
 enum DateTimePickerMode {
   /// Display DatePicker
   date,
@@ -13,6 +14,7 @@ enum DateTimePickerMode {
   datetime,
 }
 
+///it will allow us to pick date
 class DatePicker {
   /// Gets the right [DateTimePickerLocale] by a language string
   ///
@@ -89,94 +91,85 @@ class DatePicker {
   /// confirmText: [String] text of the dialog's confirm button
   /// cancelText: [String] text of the dialog's  cancel button
   static Future<DateTime?> showSimpleDatePicker(BuildContext context,
-      {DateTime? firstDate,
+      {required Function? onConfirmPressed,
+      DateTime? firstDate,
       DateTime? lastDate,
       DateTime? initialDate,
       String? dateFormat,
-      DateTimePickerLocale locale: DATETIME_PICKER_LOCALE_DEFAULT,
-      DateTimePickerMode pickerMode: DateTimePickerMode.date,
+      DateTimePickerLocale locale = DATETIME_PICKER_LOCALE_DEFAULT,
+      DateTimePickerMode pickerMode = DateTimePickerMode.date,
       Color? backgroundColor,
       Color? textColor,
       TextStyle? itemTextStyle,
       String? titleText,
       String? confirmText,
       Color? cancelTextColor,
-      bool looping: false,
-      bool reverse: false,
-      double width: 300,
-      double height: 300,
-      EdgeInsets pickerPadding: EdgeInsets.zero,
-      required Function? onConfirmPressed,
-      Alignment alignment: Alignment.center}) async {
+      bool looping = false,
+      bool reverse = false,
+      double width = 300,
+      double height = 300,
+      EdgeInsets pickerPadding = EdgeInsets.zero,
+      Alignment alignment = Alignment.center}) async {
     DateTime? _selectedDate = initialDate;
 
     // handle the range of datetime
-    if (firstDate == null) {
-      firstDate = DateTime.parse(DATE_PICKER_MIN_DATETIME);
-    }
-    if (lastDate == null) {
-      lastDate = DateTime.parse(DATE_PICKER_MAX_DATETIME);
-    }
+    firstDate ??= DateTime.parse(DATE_PICKER_MIN_DATETIME);
+    lastDate ??= DateTime.parse(DATE_PICKER_MAX_DATETIME);
 
     // handle initial DateTime
-    if (initialDate == null) {
-      initialDate = DateTime.now();
-    }
+    initialDate ??= DateTime.now();
 
-    if (backgroundColor == null)
-      backgroundColor = DateTimePickerTheme.Default.backgroundColor;
+    backgroundColor ??= DateTimePickerTheme.Default.backgroundColor;
 
-    if (textColor == null)
-      textColor = DateTimePickerTheme.Default.itemTextStyle.color;
+    textColor ??= DateTimePickerTheme.Default.itemTextStyle.color;
 
-    showModalBottomSheet<void>(
+    await showModalBottomSheet<void>(
         context: context,
-        builder: (BuildContext context) {
-          return SizedBox(
-            width: width,
-            height: height,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                TextButton(
-                  style: TextButton.styleFrom(primary: cancelTextColor),
-                  child: Text(confirmText ?? "Done"),
-                  onPressed: () {
-                    onConfirmPressed!(_selectedDate);
-                    Navigator.pop(context, _selectedDate);
-                  },
-                ),
-                Padding(
-                  padding: pickerPadding,
-                  child: DatePickerWidget(
-                    alignment: alignment,
-                    firstDate: firstDate,
-                    lastDate: lastDate,
-                    initialDate: initialDate,
-                    dateFormat: dateFormat,
-                    locale: locale,
-                    pickerTheme: DateTimePickerTheme(
-                      backgroundColor: backgroundColor == null
-                          ? Colors.white
-                          : backgroundColor,
-                      itemTextStyle: itemTextStyle ??
-                          TextStyle(
-                            color: textColor,
-                          ),
-                    ),
-                    onChange: ((DateTime date, list) {
-                      _selectedDate = date;
-                    }),
-                    onConfirm: ((DateTime date, list) {
-                      _selectedDate = date;
-                    }),
-                    looping: looping,
+        builder: (BuildContext context) => SizedBox(
+              width: width,
+              height: height,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+                  TextButton(
+                    style:
+                        TextButton.styleFrom(foregroundColor: cancelTextColor),
+                    child: Text(confirmText ?? 'Done'),
+                    onPressed: () {
+                      onConfirmPressed!(_selectedDate);
+                      Navigator.pop(context, _selectedDate);
+                    },
                   ),
-                )
-              ],
-            ),
-          );
-        });
+                  Padding(
+                    padding: pickerPadding,
+                    child: DatePickerWidget(
+                      alignment: alignment,
+                      firstDate: firstDate,
+                      lastDate: lastDate,
+                      initialDate: initialDate,
+                      dateFormat: dateFormat,
+                      locale: locale,
+                      pickerTheme: DateTimePickerTheme(
+                        backgroundColor: backgroundColor == null
+                            ? Colors.white
+                            : backgroundColor,
+                        itemTextStyle: itemTextStyle ??
+                            TextStyle(
+                              color: textColor,
+                            ),
+                      ),
+                      onChange: (DateTime date, List<int> list) {
+                        _selectedDate = date;
+                      },
+                      onConfirm: (DateTime date, List<int> list) {
+                        _selectedDate = date;
+                      },
+                      looping: looping,
+                    ),
+                  )
+                ],
+              ),
+            ));
     return _selectedDate;
   }
 }
@@ -253,15 +246,15 @@ class _DatePickerRoute<T> extends PopupRoute<T> {
 }
 
 class _DatePickerComponent extends StatelessWidget {
-  final _DatePickerRoute route;
+  const _DatePickerComponent(
+      {required this.route, required double pickerHeight})
+      : _pickerHeight = pickerHeight;
+  final _DatePickerRoute<dynamic> route;
   final double _pickerHeight;
-
-  _DatePickerComponent({required this.route, required pickerHeight})
-      : this._pickerHeight = pickerHeight;
 
   @override
   Widget build(BuildContext context) {
-    Widget pickerWidget = DatePickerWidget(
+    final Widget pickerWidget = DatePickerWidget(
       firstDate: route.minDateTime,
       lastDate: route.maxDateTime,
       initialDate: route.initialDateTime,
@@ -275,15 +268,13 @@ class _DatePickerComponent extends StatelessWidget {
     return GestureDetector(
       child: AnimatedBuilder(
         animation: route.animation!,
-        builder: (BuildContext context, Widget? child) {
-          return ClipRect(
-            child: CustomSingleChildLayout(
-              delegate: _BottomPickerLayout(route.animation!.value,
-                  contentHeight: _pickerHeight),
-              child: pickerWidget,
-            ),
-          );
-        },
+        builder: (BuildContext context, Widget? child) => ClipRect(
+          child: CustomSingleChildLayout(
+            delegate: _BottomPickerLayout(route.animation!.value,
+                contentHeight: _pickerHeight),
+            child: pickerWidget,
+          ),
+        ),
       ),
     );
   }
@@ -296,23 +287,20 @@ class _BottomPickerLayout extends SingleChildLayoutDelegate {
   final double? contentHeight;
 
   @override
-  BoxConstraints getConstraintsForChild(BoxConstraints constraints) {
-    return BoxConstraints(
-      minWidth: constraints.maxWidth,
-      maxWidth: constraints.maxWidth,
-      minHeight: 0.0,
-      maxHeight: contentHeight!,
-    );
-  }
+  BoxConstraints getConstraintsForChild(BoxConstraints constraints) =>
+      BoxConstraints(
+        minWidth: constraints.maxWidth,
+        maxWidth: constraints.maxWidth,
+        maxHeight: contentHeight!,
+      );
 
   @override
   Offset getPositionForChild(Size size, Size childSize) {
-    double height = size.height - childSize.height * progress;
-    return Offset(0.0, height);
+    final double height = size.height - childSize.height * progress;
+    return Offset(0, height);
   }
 
   @override
-  bool shouldRelayout(_BottomPickerLayout oldDelegate) {
-    return progress != oldDelegate.progress;
-  }
+  bool shouldRelayout(_BottomPickerLayout oldDelegate) =>
+      progress != oldDelegate.progress;
 }

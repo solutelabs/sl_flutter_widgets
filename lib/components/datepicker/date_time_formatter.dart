@@ -4,13 +4,16 @@ import 'date_picker.dart';
 import 'date_picker_constants.dart';
 import 'i18n/date_picker_i18n.dart';
 
+///default date format separator
+// ignore: constant_identifier_names
 const String DATE_FORMAT_SEPARATOR = r'[|,-\/._: ]+';
 
+///[DateTimeFormatter] date time formator
 class DateTimeFormatter {
   /// Get default value of date format.
   static String generateDateFormat(
       String dateFormat, DateTimePickerMode pickerMode) {
-    if (dateFormat.length > 0) {
+    if (dateFormat.isNotEmpty) {
       return dateFormat;
     }
     switch (pickerMode) {
@@ -22,31 +25,27 @@ class DateTimeFormatter {
   }
 
   /// Check if the date format is for day(contain y、M、d、E) or not.
-  static bool isDayFormat(String format) {
-    return format.contains(RegExp(r'[yMdE]'));
-  }
+  static bool isDayFormat(String format) => format.contains(RegExp(r'[yMdE]'));
 
   /// Check if the date format is for time(contain H、m、s) or not.
-  static bool isTimeFormat(String format) {
-    return format.contains(RegExp(r'[Hms]'));
-  }
+  static bool isTimeFormat(String format) => format.contains(RegExp(r'[Hms]'));
 
   /// Split date format to array.
   static List<String> splitDateFormat(String? dateFormat,
       {DateTimePickerMode? mode}) {
-    if (dateFormat == null || dateFormat.length == 0) {
-      return [];
+    if (dateFormat == null || dateFormat.isEmpty) {
+      return <String>[];
     }
     List<String> result = dateFormat.split(RegExp(DATE_FORMAT_SEPARATOR));
     if (mode == DateTimePickerMode.datetime) {
       // datetime mode need join day format
-      List<String> temp = [];
-      StringBuffer dayFormat = StringBuffer();
+      final List<String> temp = <String>[];
+      final StringBuffer dayFormat = StringBuffer();
       for (int i = 0; i < result.length; i++) {
-        String format = result[i];
+        final String format = result[i];
         if (isDayFormat(format)) {
           // find format pre-separator
-          int end = dateFormat.indexOf(format);
+          final int end = dateFormat.indexOf(format);
           if (end > 0) {
             int start = 0;
             if (i > 0) {
@@ -72,8 +71,8 @@ class DateTimeFormatter {
 
   /// Format datetime string
   static String formatDateTime(
-      int value, String format, DateTimePickerLocale? locale, weekday) {
-    if (format.length == 0) {
+      int value, String format, DateTimePickerLocale? locale, int weekday) {
+    if (format.isEmpty) {
       return value.toString();
     }
 
@@ -157,13 +156,13 @@ class DateTimeFormatter {
   /// format month text
   static String _formatMonth(
       int value, String format, DateTimePickerLocale? locale) {
-    List<String> months = DatePickerI18n.getLocaleMonths(locale);
+    final List<String> months = DatePickerI18n.getLocaleMonths(locale);
     if (format.contains('MMMM')) {
       // MMMM: the full name of month, e.g. January
       return format.replaceAll('MMMM', months[value - 1]);
     } else if (format.contains('MMM')) {
       // MMM: the short name of month, e.g. Jan
-      String month = months[value - 1];
+      final String month = months[value - 1];
       return format.replaceAll('MMM', month.substring(0, min(3, month.length)));
     }
     return _formatNumber(value, format, 'M');
@@ -171,40 +170,37 @@ class DateTimeFormatter {
 
   /// format day text
   static String _formatDay(
-      int value, String format, DateTimePickerLocale? locale) {
-    return _formatNumber(value, format, 'd');
-  }
+          int value, String format, DateTimePickerLocale? locale) =>
+      _formatNumber(value, format, 'd');
 
   /// format week text
   static String _formatWeek(
       int value, String format, DateTimePickerLocale? locale) {
     if (format.contains('EEEE')) {
       // EEEE: the full name of week, e.g. Monday
-      List<String> weeks = DatePickerI18n.getLocaleWeeks(locale)!;
+      final List<String> weeks = DatePickerI18n.getLocaleWeeks(locale)!;
       return format.replaceAll('EEEE', weeks[value - 1]);
     }
     // EEE: the short name of week, e.g. Mon
-    List<String> weeks = DatePickerI18n.getLocaleWeeks(locale, false)!;
+    final List<String> weeks =
+        DatePickerI18n.getLocaleWeeks(locale, isFull: false)!;
     return format.replaceAll(RegExp(r'E+'), weeks[value - 1]);
   }
 
   /// format hour text
   static String _formatHour(
-      int value, String format, DateTimePickerLocale? locale) {
-    return _formatNumber(value, format, 'H');
-  }
+          int value, String format, DateTimePickerLocale? locale) =>
+      _formatNumber(value, format, 'H');
 
   /// format minute text
   static String _formatMinute(
-      int value, String format, DateTimePickerLocale? locale) {
-    return _formatNumber(value, format, 'm');
-  }
+          int value, String format, DateTimePickerLocale? locale) =>
+      _formatNumber(value, format, 'm');
 
   /// format second text
   static String _formatSecond(
-      int value, String format, DateTimePickerLocale? locale) {
-    return _formatNumber(value, format, 's');
-  }
+          int value, String format, DateTimePickerLocale? locale) =>
+      _formatNumber(value, format, 's');
 
   /// format number, if the digit count is 2, will pad zero on the left
   static String _formatNumber(int value, String format, String unit) {

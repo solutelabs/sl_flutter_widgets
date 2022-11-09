@@ -5,56 +5,46 @@ class _StringsTr extends _StringsI18n {
   const _StringsTr();
 
   @override
-  String getCancelText() {
-    return 'İptal';
-  }
+  String getCancelText() => 'İptal';
 
   @override
-  String getDoneText() {
-    return 'Tamam';
-  }
+  String getDoneText() => 'Tamam';
 
   @override
-  List<String> getMonths() {
-    return [
-      "Ocak",
-      "Şubat",
-      "Mart",
-      "Nisan",
-      "Mayıs",
-      "Haziran",
-      "Temmuz",
-      "Ağustos",
-      "Eylül",
-      "Ekim",
-      "Kasım",
-      "Aralık"
+  List<String> getMonths() => <String>[
+      'Ocak',
+      'Şubat',
+      'Mart',
+      'Nisan',
+      'Mayıs',
+      'Haziran',
+      'Temmuz',
+      'Ağustos',
+      'Eylül',
+      'Ekim',
+      'Kasım',
+      'Aralık'
     ];
-  }
 
   @override
-  List<String> getWeeksFull() {
-    return [
-      "Pazartesi",
-      "Salı",
-      "Çarşamba",
-      "Perşembe",
-      "Cuma",
-      "Cumartesi",
-      "Pazar",
+  List<String> getWeeksFull() =><String> [
+      'Pazartesi',
+      'Salı',
+      'Çarşamba',
+      'Perşembe',
+      'Cuma',
+      'Cumartesi',
+      'Pazar',
     ];
-  }
 
   @override
-  List<String> getWeeksShort() {
-    return [
-      "Pzt",
-      "Sal",
-      "Çar",
-      "Per",
-      "Cum",
-      "Cmt",
-      "Paz",
+  List<String> getWeeksShort() =><String> [
+      'Pzt',
+      'Sal',
+      'Çar',
+      'Per',
+      'Cum',
+      'Cmt',
+      'Paz',
     ];
-  }
 }

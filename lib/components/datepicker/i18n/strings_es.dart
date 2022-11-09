@@ -5,48 +5,38 @@ class _StringsEs extends _StringsI18n {
   const _StringsEs();
 
   @override
-  String getCancelText() {
-    return "Cancelar";
-  }
+  String getCancelText() => 'Cancelar';
 
   @override
-  String getDoneText() {
-    return "Aceptar";
-  }
+  String getDoneText() => 'Aceptar';
 
   @override
-  List<String> getMonths() {
-    return [
-      "Enero",
-      "Febrero",
-      "Marzo",
-      "Abril",
-      "Mayo",
-      "Junio",
-      "Julio",
-      "Agosto",
-      "Septiembre",
-      "Octubre",
-      "Noviembre",
-      "Diciembre"
+  List<String> getMonths() => <String>[
+      'Enero',
+      'Febrero',
+      'Marzo',
+      'Abril',
+      'Mayo',
+      'Junio',
+      'Julio',
+      'Agosto',
+      'Septiembre',
+      'Octubre',
+      'Noviembre',
+      'Diciembre'
     ];
-  }
 
   @override
-  List<String> getWeeksFull() {
-    return [
-      "Lunes",
-      "Martes",
-      "Miercoles",
-      "Jueves",
-      "Viernes",
-      "Sabado",
-      "Domingo",
+  List<String> getWeeksFull() =><String> [
+      'Lunes',
+      'Martes',
+      'Miercoles',
+      'Jueves',
+      'Viernes',
+      'Sabado',
+      'Domingo',
     ];
-  }
 
   @override
-  List<String>? getWeeksShort() {
-    return null;
-  }
+  List<String>? getWeeksShort() => null;
 }

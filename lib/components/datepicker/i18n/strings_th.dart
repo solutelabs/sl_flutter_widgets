@@ -5,56 +5,46 @@ class _StringsTh extends _StringsI18n {
   const _StringsTh();
 
   @override
-  String getCancelText() {
-    return 'ยกเลิก';
-  }
+  String getCancelText() => 'ยกเลิก';
 
   @override
-  String getDoneText() {
-    return 'ตกลง';
-  }
+  String getDoneText() => 'ตกลง';
 
   @override
-  List<String> getMonths() {
-    return [
-      "มกราคม",
-      "กุมภาพันธ์",
-      "มีนาคม",
-      "เมษายน",
-      "พฤษภาคม",
-      "มิถุนายน",
-      "กรกฎาคม",
-      "สิงหาคม",
-      "กันยายน",
-      "ตุลาคม",
-      "พฤศจิกายน",
-      "ธันวาคม"
+  List<String> getMonths() =><String> [
+      'มกราคม',
+      'กุมภาพันธ์',
+      'มีนาคม',
+      'เมษายน',
+      'พฤษภาคม',
+      'มิถุนายน',
+      'กรกฎาคม',
+      'สิงหาคม',
+      'กันยายน',
+      'ตุลาคม',
+      'พฤศจิกายน',
+      'ธันวาคม'
     ];
-  }
 
   @override
-  List<String> getWeeksFull() {
-    return [
-      "จันทร์",
-      "อังคาร",
-      "พุธ",
-      "พฤหัสบดี",
-      "ศุกร์",
-      "เสาร์",
-      "อาทิตย์",
+  List<String> getWeeksFull() =><String> [
+      'จันทร์',
+      'อังคาร',
+      'พุธ',
+      'พฤหัสบดี',
+      'ศุกร์',
+      'เสาร์',
+      'อาทิตย์',
     ];
-  }
 
   @override
-  List<String> getWeeksShort() {
-    return [
-      "จ.",
-      "อ.",
-      "พ.",
-      "พฤ.",
-      "ศ.",
-      "ส.",
-      "อา.",
+  List<String> getWeeksShort() => <String>[
+      'จ.',
+      'อ.',
+      'พ.',
+      'พฤ.',
+      'ศ.',
+      'ส.',
+      'อา.',
     ];
-  }
 }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sl_flutter_widgets/colors/sl_color.dart';
-
+///slbutton class which provide default button
 class SlButton extends StatelessWidget {
+  ///initialize the button
   const SlButton({
     required this.text,
     required this.onTap,

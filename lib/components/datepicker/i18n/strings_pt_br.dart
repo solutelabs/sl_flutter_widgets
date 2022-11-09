@@ -5,48 +5,38 @@ class _StringsPtBr extends _StringsI18n {
   const _StringsPtBr();
 
   @override
-  String getCancelText() {
-    return 'Cancelar';
-  }
+  String getCancelText() => 'Cancelar';
 
   @override
-  String getDoneText() {
-    return 'Feito';
-  }
+  String getDoneText() => 'Feito';
 
   @override
-  List<String> getMonths() {
-    return [
-      "Janeiro",
-      "Fevereiro",
-      "Março",
-      "Abril",
-      "Maio",
-      "Junho",
-      "Julho",
-      "Agosto",
-      "Setembro",
-      "Outubro",
-      "Novembro",
-      "Dezembro"
+  List<String> getMonths() => <String>[
+      'Janeiro',
+      'Fevereiro',
+      'Março',
+      'Abril',
+      'Maio',
+      'Junho',
+      'Julho',
+      'Agosto',
+      'Setembro',
+      'Outubro',
+      'Novembro',
+      'Dezembro'
     ];
-  }
 
   @override
-  List<String> getWeeksFull() {
-    return [
-      "Segunda",
-      "Terca",
-      "Quarta",
-      "Quinta",
-      "Sexta",
-      "Sabado",
-      "Domingo",
+  List<String> getWeeksFull() => <String>[
+      'Segunda',
+      'Terca',
+      'Quarta',
+      'Quinta',
+      'Sexta',
+      'Sabado',
+      'Domingo',
     ];
-  }
 
   @override
-  List<String>? getWeeksShort() {
-    return null;
-  }
+  List<String>? getWeeksShort() => null;
 }

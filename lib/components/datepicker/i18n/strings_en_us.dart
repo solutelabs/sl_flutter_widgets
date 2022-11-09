@@ -5,56 +5,46 @@ class _StringsEnUs extends _StringsI18n {
   const _StringsEnUs();
 
   @override
-  String getCancelText() {
-    return 'Cancel';
-  }
+  String getCancelText() => 'Cancel';
 
   @override
-  String getDoneText() {
-    return 'Done';
-  }
+  String getDoneText() => 'Done';
 
   @override
-  List<String> getMonths() {
-    return [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December"
+  List<String> getMonths() => <String>[
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December'
     ];
-  }
 
   @override
-  List<String> getWeeksFull() {
-    return [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
+  List<String> getWeeksFull() =><String> [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday',
     ];
-  }
 
   @override
-  List<String> getWeeksShort() {
-    return [
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thur",
-      "Fri",
-      "Sat",
-      "Sun",
+  List<String> getWeeksShort() => <String>[
+      'Mon',
+      'Tue',
+      'Wed',
+      'Thur',
+      'Fri',
+      'Sat',
+      'Sun',
     ];
-  }
 }

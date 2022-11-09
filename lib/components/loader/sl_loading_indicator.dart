@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 
 /// A loading indicator widget that can be of type circular or linear
 class SLLoadingIndicator extends StatelessWidget {
-  /// Creates a circular progress indicator that takes place at the centre of the screen if
+  /// Creates a circular progress indicator that 
+  /// takes place at the centre of the screen if
   /// [isCircular] is true otherwise it creates a linear progress indicator at
   /// the top of the screen. There are two kinds of progress indicators:
   ///
   ///  * Determinate progress indicators that have a specific value at
-  ///    each point in time, and the value should increase monotonically from 0.0
-  ///    to 1.0, at which time the indicator is complete. To create a determinate
+  ///    each point in time, and the value should increase monotonically from 0
+  ///    to 1.0, at which time the indicator is complete. 
+  /// To create a determinate
   ///    progress indicator, pass a non-null [value] between 0.0 and 1.0.
   ///  * Indeterminate progress indicators that do not have a specific
   ///    value at each point in time and instead indicate that progress is being
@@ -20,7 +22,8 @@ class SLLoadingIndicator extends StatelessWidget {
   /// the loader is spinning.
   ///
   /// [isCircular] is optional and have a default value of true
-  /// [backgroundColor] is optional and have a default value of `Colors.transparent`
+  /// [backgroundColor] is optional and have a default 
+  /// value of `Colors.transparent`
   ///
   const SLLoadingIndicator({
     required this.color,

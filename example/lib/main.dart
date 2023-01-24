@@ -103,7 +103,7 @@ class ListViewBuilder extends StatelessWidget {
                       break;
 
                     case (4):
-                      var datePicked = await DatePicker.showSimpleDatePicker(
+                      await DatePicker.showSimpleDatePicker(
                         context,
                         textColor: Colors.grey,
                         itemTextStyle: const TextStyle(

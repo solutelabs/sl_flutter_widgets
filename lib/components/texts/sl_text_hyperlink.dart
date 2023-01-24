@@ -37,8 +37,17 @@ class TextHyperlink extends StatelessWidget {
           if (await canLaunchUrl(Uri.parse(url))) {
             await launchUrl(Uri.parse(url));
           } else {
-            throw 'Could not launch $url';
+            throw CanNotLaunchUrlException(msg: 'Could not launch $url');
           }
         },
       );
+}
+
+///Exception for the [TextHyperlink]
+class CanNotLaunchUrlException implements Exception {
+  ///intilize the Exception
+  CanNotLaunchUrlException({required this.msg});
+
+  ///String msg of the exception
+  String msg;
 }

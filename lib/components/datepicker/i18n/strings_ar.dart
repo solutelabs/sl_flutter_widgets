@@ -5,48 +5,38 @@ class _StringsAr extends _StringsI18n {
   const _StringsAr();
 
   @override
-  String getCancelText() {
-    return 'ألغاء';
-  }
+  String getCancelText() => 'ألغاء';
 
   @override
-  String getDoneText() {
-    return 'تم';
-  }
+  String getDoneText() => 'تم';
 
   @override
-  List<String> getMonths() {
-    return [
-      "كانون الثاني",
-      "شباط",
-      "آذار",
-      "نيسان",
-      "أيار",
-      "حزيران",
-      "تموز",
-      "آب",
-      "أيلول",
-      "تشرين الأول",
-      "تشرين الثاني",
-      "كانون الأول"
+  List<String> getMonths() =><String> [
+      'كانون الثاني',
+      'شباط',
+      'آذار',
+      'نيسان',
+      'أيار',
+      'حزيران',
+      'تموز',
+      'آب',
+      'أيلول',
+      'تشرين الأول',
+      'تشرين الثاني',
+      'كانون الأول'
     ];
-  }
 
   @override
-  List<String> getWeeksFull() {
-    return [
-      "الأثنين",
-      "الثلاثاء",
-      "الأربعاء",
-      "الخميس",
-      "الجمعه",
-      "السبت",
-      "الأحد",
+  List<String> getWeeksFull() =><String> [
+      'الأثنين',
+      'الثلاثاء',
+      'الأربعاء',
+      'الخميس',
+      'الجمعه',
+      'السبت',
+      'الأحد',
     ];
-  }
 
   @override
-  List<String>? getWeeksShort() {
-    return null;
-  }
+  List<String>? getWeeksShort() => null;
 }

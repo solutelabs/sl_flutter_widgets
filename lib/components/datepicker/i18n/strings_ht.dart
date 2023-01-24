@@ -5,56 +5,46 @@ class _StringsHt extends _StringsI18n {
   const _StringsHt();
 
   @override
-  String getCancelText() {
-    return 'Anile';
-  }
+  String getCancelText() => 'Anile';
 
   @override
-  String getDoneText() {
-    return 'Fè';
-  }
+  String getDoneText() => 'Fè';
 
   @override
-  List<String> getMonths() {
-    return [
-      "Janvye",
-      "Fevriye",
-      "Mas",
-      "Avril",
-      "Me",
-      "Jen",
-      "Jiyè",
-      "Out",
-      "Septanm",
-      "Oktòb",
-      "Novanm",
-      "Desanm"
+  List<String> getMonths() =><String> [
+      'Janvye',
+      'Fevriye',
+      'Mas',
+      'Avril',
+      'Me',
+      'Jen',
+      'Jiyè',
+      'Out',
+      'Septanm',
+      'Oktòb',
+      'Novanm',
+      'Desanm'
     ];
-  }
 
   @override
-  List<String> getWeeksFull() {
-    return [
-      "Lendi",
-      "Madi",
-      "Mèkredi",
-      "Jedi",
-      "Vandredi",
-      "Samdi",
-      "Dimanch",
+  List<String> getWeeksFull() =><String> [
+      'Lendi',
+      'Madi',
+      'Mèkredi',
+      'Jedi',
+      'Vandredi',
+      'Samdi',
+      'Dimanch',
     ];
-  }
 
   @override
-  List<String> getWeeksShort() {
-    return [
-      "Lendi",
-      "Madi",
-      "Mèkredi",
-      "Jedi",
-      "Vandredi",
-      "Samdi",
-      "Dimanch",
+  List<String> getWeeksShort() => <String>[
+      'Lendi',
+      'Madi',
+      'Mèkredi',
+      'Jedi',
+      'Vandredi',
+      'Samdi',
+      'Dimanch',
     ];
-  }
 }

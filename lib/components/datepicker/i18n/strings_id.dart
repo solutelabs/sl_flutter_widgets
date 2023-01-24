@@ -4,56 +4,46 @@ class _StringsId extends _StringsI18n {
   const _StringsId();
 
   @override
-  String getCancelText() {
-    return 'Batal';
-  }
+  String getCancelText() => 'Batal';
 
   @override
-  String getDoneText() {
-    return 'Pilih';
-  }
+  String getDoneText() => 'Pilih';
 
   @override
-  List<String> getMonths() {
-    return [
-      "Januari",
-      "Februari",
-      "Maret",
-      "April",
-      "Mei",
-      "Juni",
-      "Juli",
-      "Agustus",
-      "September",
-      "Oktober",
-      "November",
-      "Desember"
+  List<String> getMonths() => <String>[
+      'Januari',
+      'Februari',
+      'Maret',
+      'April',
+      'Mei',
+      'Juni',
+      'Juli',
+      'Agustus',
+      'September',
+      'Oktober',
+      'November',
+      'Desember'
     ];
-  }
 
   @override
-  List<String> getWeeksFull() {
-    return [
-      "Senin",
-      "Selasa",
-      "Rabu",
-      "Kamis",
+  List<String> getWeeksFull() => <String>[
+      'Senin',
+      'Selasa',
+      'Rabu',
+      'Kamis',
       "Jum'at",
-      "Sabtu",
-      "Minggu",
+      'Sabtu',
+      'Minggu',
     ];
-  }
 
   @override
-  List<String> getWeeksShort() {
-    return [
-      "Sen",
-      "Sel",
-      "Rab",
-      "Kam",
-      "Jum",
-      "Sab",
-      "Min",
+  List<String> getWeeksShort() => <String>[
+      'Sen',
+      'Sel',
+      'Rab',
+      'Kam',
+      'Jum',
+      'Sab',
+      'Min',
     ];
-  }
 }

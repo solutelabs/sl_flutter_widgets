@@ -5,48 +5,38 @@ class _StringsFr extends _StringsI18n {
   const _StringsFr();
 
   @override
-  String getCancelText() {
-    return 'Annuler';
-  }
+  String getCancelText() => 'Annuler';
 
   @override
-  String getDoneText() {
-    return 'Valider';
-  }
+  String getDoneText() => 'Valider';
 
   @override
-  List<String> getMonths() {
-    return [
-      "Janvier",
-      "Février",
-      "Mars",
-      "Avril",
-      "Mai",
-      "Juin",
-      "Juillet",
-      "Août",
-      "Septembre",
-      "Octobre",
-      "Novembre",
-      "Décembre"
+  List<String> getMonths() => <String>[
+      'Janvier',
+      'Février',
+      'Mars',
+      'Avril',
+      'Mai',
+      'Juin',
+      'Juillet',
+      'Août',
+      'Septembre',
+      'Octobre',
+      'Novembre',
+      'Décembre'
     ];
-  }
 
   @override
-  List<String> getWeeksFull() {
-    return [
-      "Lundi",
-      "Mardi",
-      "Mercredi",
-      "Jeudi",
-      "Vendredi",
-      "Samedi",
-      "Dimanche",
+  List<String> getWeeksFull() => <String>[
+      'Lundi',
+      'Mardi',
+      'Mercredi',
+      'Jeudi',
+      'Vendredi',
+      'Samedi',
+      'Dimanche',
     ];
-  }
 
   @override
-  List<String>? getWeeksShort() {
-    return null;
-  }
+  List<String>? getWeeksShort() => null;
 }

@@ -5,56 +5,46 @@ class _StringsRu extends _StringsI18n {
   const _StringsRu();
 
   @override
-  String getCancelText() {
-    return 'Отмена';
-  }
+  String getCancelText() => 'Отмена';
 
   @override
-  String getDoneText() {
-    return 'Готово';
-  }
+  String getDoneText() => 'Готово';
 
   @override
-  List<String> getMonths() {
-    return [
-      "Январь",
-      "Февраль",
-      "Март",
-      "Апрель",
-      "Май",
-      "Июнь",
-      "Июль",
-      "Август",
-      "Сентябрь",
-      "Октябрь",
-      "Ноябрь",
-      "Декабрь",
+  List<String> getMonths() => <String>[
+      'Январь',
+      'Февраль',
+      'Март',
+      'Апрель',
+      'Май',
+      'Июнь',
+      'Июль',
+      'Август',
+      'Сентябрь',
+      'Октябрь',
+      'Ноябрь',
+      'Декабрь',
     ];
-  }
 
   @override
-  List<String> getWeeksFull() {
-    return [
-      "Понедельник",
-      "Вторник",
-      "Среда",
-      "Четверг",
-      "Пятница",
-      "Суббота",
-      "Воскресенье",
+  List<String> getWeeksFull() => <String>[
+      'Понедельник',
+      'Вторник',
+      'Среда',
+      'Четверг',
+      'Пятница',
+      'Суббота',
+      'Воскресенье',
     ];
-  }
 
   @override
-  List<String> getWeeksShort() {
-    return [
-      "пн",
-      "вт",
-      "ср",
-      "чт",
-      "пт",
-      "сб",
-      "вс",
+  List<String> getWeeksShort() => <String>[
+      'пн',
+      'вт',
+      'ср',
+      'чт',
+      'пт',
+      'сб',
+      'вс',
     ];
-  }
 }

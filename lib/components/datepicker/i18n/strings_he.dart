@@ -5,56 +5,46 @@ class _StringsHe extends _StringsI18n {
   const _StringsHe();
 
   @override
-  String getCancelText() {
-    return 'ביטול';
-  }
+  String getCancelText() => 'ביטול';
 
   @override
-  String getDoneText() {
-    return 'אישור';
-  }
+  String getDoneText() => 'אישור';
 
   @override
-  List<String> getMonths() {
-    return [
-      "ינואר",
-      "פברואר",
-      "מרץ",
-      "אפריל",
-      "מאי",
-      "יוני",
-      "יולי",
-      "אוגוסט",
-      "ספמטבר",
-      "אוקטובר",
-      "נובמבר",
-      "דצמבר"
+  List<String> getMonths() =><String> [
+      'ינואר',
+      'פברואר',
+      'מרץ',
+      'אפריל',
+      'מאי',
+      'יוני',
+      'יולי',
+      'אוגוסט',
+      'ספמטבר',
+      'אוקטובר',
+      'נובמבר',
+      'דצמבר'
     ];
-  }
 
   @override
-  List<String> getWeeksFull() {
-    return [
-      "שני",
-      "שלישי",
-      "רביעי",
-      "חמישי",
-      "שישי",
-      "שבת",
-      "ראשון",
+  List<String> getWeeksFull() => <String>[
+      'שני',
+      'שלישי',
+      'רביעי',
+      'חמישי',
+      'שישי',
+      'שבת',
+      'ראשון',
     ];
-  }
 
   @override
-  List<String> getWeeksShort() {
-    return [
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thur",
-      "Fri",
-      "Sat",
-      "Sun",
+  List<String> getWeeksShort() =><String> [
+      'Mon',
+      'Tue',
+      'Wed',
+      'Thur',
+      'Fri',
+      'Sat',
+      'Sun',
     ];
-  }
 }

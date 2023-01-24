@@ -5,56 +5,46 @@ class _StringsSv extends _StringsI18n {
   const _StringsSv();
 
   @override
-  String getCancelText() {
-    return 'Avbryt';
-  }
+  String getCancelText() => 'Avbryt';
 
   @override
-  String getDoneText() {
-    return 'Klar';
-  }
+  String getDoneText() => 'Klar';
 
   @override
-  List<String> getMonths() {
-    return [
-      "Januari",
-      "Februari",
-      "Mars",
-      "April",
-      "Maj",
-      "Juni",
-      "Juli",
-      "Augusti",
-      "September",
-      "Oktober",
-      "November",
-      "December"
+  List<String> getMonths() =><String> [
+      'Januari',
+      'Februari',
+      'Mars',
+      'April',
+      'Maj',
+      'Juni',
+      'Juli',
+      'Augusti',
+      'September',
+      'Oktober',
+      'November',
+      'December'
     ];
-  }
 
   @override
-  List<String> getWeeksFull() {
-    return [
-      "Måndag",
-      "Tisdag",
-      "Onsdag",
-      "Torsdag",
-      "Fredag",
-      "Lördag",
-      "Söndag",
+  List<String> getWeeksFull() => <String>[
+      'Måndag',
+      'Tisdag',
+      'Onsdag',
+      'Torsdag',
+      'Fredag',
+      'Lördag',
+      'Söndag',
     ];
-  }
 
   @override
-  List<String> getWeeksShort() {
-    return [
-      "Mån",
-      "Tis",
-      "Ons",
-      "Tor",
-      "Fre",
-      "Lör",
-      "Sön",
+  List<String> getWeeksShort() =><String> [
+      'Mån',
+      'Tis',
+      'Ons',
+      'Tor',
+      'Fre',
+      'Lör',
+      'Sön',
     ];
-  }
 }

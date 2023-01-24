@@ -5,56 +5,46 @@ class _StringsLt extends _StringsI18n {
   const _StringsLt();
 
   @override
-  String getCancelText() {
-    return 'Atšaukti';
-  }
+  String getCancelText() => 'Atšaukti';
 
   @override
-  String getDoneText() {
-    return 'Baigta';
-  }
+  String getDoneText() => 'Baigta';
 
   @override
-  List<String> getMonths() {
-    return [
-      "Sausis",
-      "Vasaris",
-      "Kovas",
-      "Balandis",
-      "Gegužė",
-      "Birželis",
-      "Liepa",
-      "Rugpjūtis",
-      "Rugsėjis",
-      "Spalis",
-      "Lapkritis",
-      "Gruodis",
+  List<String> getMonths() =><String> [
+      'Sausis',
+      'Vasaris',
+      'Kovas',
+      'Balandis',
+      'Gegužė',
+      'Birželis',
+      'Liepa',
+      'Rugpjūtis',
+      'Rugsėjis',
+      'Spalis',
+      'Lapkritis',
+      'Gruodis',
     ];
-  }
 
   @override
-  List<String> getWeeksFull() {
-    return [
-      "Pirmadienis",
-      "Antradienis",
-      "Trečiadienis",
-      "Ketvirtadienis",
-      "Penktadienis",
-      "Šeštadienis",
-      "Sekmadienis",
+  List<String> getWeeksFull() => <String>[
+      'Pirmadienis',
+      'Antradienis',
+      'Trečiadienis',
+      'Ketvirtadienis',
+      'Penktadienis',
+      'Šeštadienis',
+      'Sekmadienis',
     ];
-  }
 
   @override
-  List<String> getWeeksShort() {
-    return [
-      "pir",
-      "antr",
-      "treč",
-      "ketv",
-      "penkt",
-      "šeš",
-      "sekm",
+  List<String> getWeeksShort() =><String> [
+      'pir',
+      'antr',
+      'treč',
+      'ketv',
+      'penkt',
+      'šeš',
+      'sekm',
     ];
-  }
 }

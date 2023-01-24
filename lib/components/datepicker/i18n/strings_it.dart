@@ -5,56 +5,46 @@ class _StringsIt extends _StringsI18n {
   const _StringsIt();
 
   @override
-  String getCancelText() {
-    return 'Annulla';
-  }
+  String getCancelText() => 'Annulla';
 
   @override
-  String getDoneText() {
-    return 'Salva';
-  }
+  String getDoneText() => 'Salva';
 
   @override
-  List<String> getMonths() {
-    return [
-      "Gennaio",
-      "Febbraio",
-      "Marzo",
-      "Aprile",
-      "Maggio",
-      "Giugno",
-      "Luglio",
-      "Agosto",
-      "Settembre",
-      "Ottobre",
-      "Novembre",
-      "Dicembre"
+  List<String> getMonths() => <String>[
+      'Gennaio',
+      'Febbraio',
+      'Marzo',
+      'Aprile',
+      'Maggio',
+      'Giugno',
+      'Luglio',
+      'Agosto',
+      'Settembre',
+      'Ottobre',
+      'Novembre',
+      'Dicembre'
     ];
-  }
 
   @override
-  List<String> getWeeksFull() {
-    return [
-      "Lunedì",
-      "Martedì",
-      "Mercoledì",
-      "Giovedì",
-      "Venerdì",
-      "Sabato",
-      "Domenica",
+  List<String> getWeeksFull() =><String> [
+      'Lunedì',
+      'Martedì',
+      'Mercoledì',
+      'Giovedì',
+      'Venerdì',
+      'Sabato',
+      'Domenica',
     ];
-  }
 
   @override
-  List<String> getWeeksShort() {
-    return [
-      "Lu",
-      "Ma",
-      "Me",
-      "Gi",
-      "Ve",
-      "Sa",
-      "Do",
+  List<String> getWeeksShort() =><String> [
+      'Lu',
+      'Ma',
+      'Me',
+      'Gi',
+      'Ve',
+      'Sa',
+      'Do',
     ];
-  }
 }

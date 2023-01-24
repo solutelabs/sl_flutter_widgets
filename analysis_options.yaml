@@ -1,1 +1,1 @@
-#include: package:flutter_lints/flutter.yaml
+include: package:solutelabs_lint/analysis_options.yaml

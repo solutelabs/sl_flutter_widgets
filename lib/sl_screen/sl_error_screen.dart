@@ -42,7 +42,7 @@
 //                     height: Units.small,
 //                   ),
 //                   Text(
-//                     'Please check your internet connection or try agin later.',
+//                   'Please check your internet connection or try agin later.',
 //                     textAlign: TextAlign.center,
 //                     style: Theme.of(context).textTheme.subtitle2,
 //                   ),
@@ -55,7 +55,7 @@
 //                       onPressed: () {},
 //                       child: Text(
 //                         'Reload',
-//                         style: Theme.of(context).textTheme.subtitle2!.copyWith(
+//                      style: Theme.of(context).textTheme.subtitle2!.copyWith(
 //                               color: AppColors.reneeBlack,
 //                               fontWeight: FontWeight.w600,
 //                             ),
